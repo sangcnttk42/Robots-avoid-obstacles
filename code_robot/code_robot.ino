@@ -20,7 +20,6 @@ int khoangCachTrai, khoangCachPhai, khoangCachTruoc;
 int khoangCach = 0;
 
 void setup() {
-  Serial.begin(115200); // mở cổng Serial monitor 115200 bps
   myservo.attach(10); // Khai báo chân servo
   myservo.write(90);
   delay(1000);
@@ -73,7 +72,6 @@ int docKhoangCach() {
   delay(70);
   unsigned int doKhoangCach = camBien.ping();
   int quangDuong = doKhoangCach / US_ROUNDTRIP_CM;
-  Serial.println(quangDuong);
   return quangDuong;
 }
 
